@@ -25,8 +25,8 @@ window.switchTab = function(tipo) {
 // ==========================================
 // 2. CONFIGURAÇÃO SUPABASE
 // ==========================================
-const SUPABASE_URL = 'https://qdmvlpnevvxvjdvgooeh.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_r-__wMRaOzmh1AGM-tSkbQ_Kp5HkQUx';
+const SUPABASE_URL = 'https://aqjwntjoppjxmnlcbinw.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_BAOomaj4K9QCZropFySwSA_tCPgqths';
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 let treinoSelecionado = 'A'; 
