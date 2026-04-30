@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Treino - Área do Aluno</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Meu Treino - Samuel Soares Personal</title>
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
     <div class="container-aluno">
-        <header style="margin-bottom: 20px;">
-        <img src="logo.jpg" alt="Samuel Soares Personal">
-    </header>
+        <!-- Cabeçalho com a Logo do Samuel Soares -->
+        <header style="margin-bottom: 20px; text-align: center;">
+            <img src="logo.jpg" alt="Samuel Soares Personal" style="width: 180px; max-width: 80%; height: auto;">
+        </header>
+
+        <!-- Informações de Perfil e Boas-vindas -->
         <header class="header-aluno">
             <div class="perfil-info">
                 <div class="foto-perfil" onclick="trocarFotoPerfil()" title="Clique para trocar sua foto" style="cursor: pointer;">
-    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto Aluno" id="img-aluno">
-</div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Foto Aluno" id="img-aluno">
+                </div>
                 <div class="texto-boas-vindas">
                     <span>Olá,</span>
                     <h2 id="nome-aluno">Carregando...</h2>
                     
+                    <!-- Cronômetro de descanso inline -->
                     <div id="cronometro-container" class="cronometro-inline">
                         <span id="cronometro-tempo">00:00</span>
                         <button onclick="pararCronometro()" class="btn-parar-timer">✕</button>
@@ -32,6 +36,7 @@
             <button class="btn-sair" onclick="logout()">Sair</button>
         </header>
 
+        <!-- Filtros de Treino (A ao E) -->
         <div class="filtro-treinos">
             <button onclick="filtrarTreino('A')" id="btn-treino-A" class="active">TREINO A</button>
             <button onclick="filtrarTreino('B')" id="btn-treino-B">TREINO B</button>
@@ -40,6 +45,7 @@
             <button onclick="filtrarTreino('E')" id="btn-treino-E">TREINO E</button>
         </div>
 
+        <!-- Seção onde os exercícios serão renderizados -->
         <section class="treino-secao">
             <div id="lista-exercicios">
                 <p class="msg-status">Buscando sua ficha no banco...</p>
@@ -47,10 +53,12 @@
         </section>
     </div>
 
+    <!-- Áudio de alerta para o cronômetro -->
     <audio id="alarme-audio" src="https://noproblo.dayjo.org/ZeldaSounds/OOT/OOT_Secret.wav"></audio>
 
+    <!-- Scripts de Integração -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
     <script>
         window.onload = function() {
             carregarDadosAluno();
