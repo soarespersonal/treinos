@@ -1,0 +1,357 @@
+/* 1. RESET E GLOBAIS */
+* { 
+    box-sizing: border-box; 
+    transition: all 0.2s ease;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* 2. COMPONENTES DE FORMULÁRIO */
+input, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #1e1e1e;
+    color: white;
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.btn-principal {
+    padding: 15px;
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-principal:hover {
+    background: #e6b800;
+    transform: translateY(-2px);
+}
+
+/* 3. LOGIN (index.html) */
+.login-container {
+    width: 90%;
+    max-width: 380px;
+    margin-top: 50px;
+}
+
+.tabs {
+    display: flex;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: #252525;
+    color: #888;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tab-btn.active {
+    background: #ffcc00;
+    color: #000;
+}
+
+.login-box {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 0 0 12px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 4. ÁREA DO ALUNO - CABEÇALHO E PERFIL */
+.container-aluno {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.header-aluno {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.perfil-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.foto-perfil img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #ffcc00;
+    object-fit: cover;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+}
+
+.texto-boas-vindas h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #ffcc00;
+}
+
+.frase-motivacional {
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* 5. CRONÔMETRO INLINE (ABAIXO DO NOME) */
+.cronometro-inline {
+    display: none;
+    background: #ffcc00;
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.6rem;
+    font-weight: bold;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.cronometro-inline.visible {
+    display: flex;
+}
+
+/* 6. FILTROS DE TREINO (A, B, C) */
+.filtro-treinos {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.filtro-treinos button {
+    flex: 1;
+    padding: 12px;
+    background: #252525;
+    color: white;
+    border: 1px solid #ffcc00;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filtro-treinos button.active {
+    background: #ffcc00;
+    color: #000;
+}
+
+/* 7. CARDS DE TREINO */
+.card-treino {
+    background: #1e1e1e;
+    border-left: 6px solid #ffcc00;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-treino h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-video {
+    background: transparent;
+    color: #ffcc00;
+    border: 1px solid #ffcc00;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 8. CONTROLE DE CARGA E CRONÔMETRO DO EXERCÍCIO */
+.input-carga {
+    width: 80px;
+    background: #000;
+    border: 1px solid #444;
+    color: #ffcc00;
+    padding: 6px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn-acao-mini, .btn-timer {
+    background: #252525;
+    color: #ffcc00;
+    border: 1px solid #444;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.btn-timer {
+    margin-top: 10px;
+    border-color: #ffcc00;
+    display: block;
+}
+
+/* 9. VÍDEO DROPDOWN */
+.video-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #000;
+}
+
+.video-dropdown.open {
+    max-height: 450px;
+    padding: 15px 0;
+}
+
+.video-container {
+    position: relative;
+    width: 90%;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* 10. UTILITÁRIOS */
+.btn-sair {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.check-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.msg-status {
+    text-align: center;
+    color: #666;
+    margin-top: 40px;
+}
+
+/* AJUSTES PARA A LISTA DE EDIÇÃO NO ADMIN */
+#lista-edicao-treinos select {
+    background: #121212;
+    border: 1px solid #444;
+    padding: 8px;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    color: #ffcc00;
+}
+
+#lista-edicao-treinos label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+#lista-edicao-treinos input {
+    background: #121212;
+    border: 1px solid #444;
+    padding: 10px;
+}
+
+/* Deixa os botões de Salvar/Excluir mais robustos na edição */
+#lista-edicao-treinos button {
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s;
+}
+
+#lista-edicao-treinos button:hover {
+    opacity: 0.8;
+}
+
+.foto-perfil {
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.05); /* Dá um zoom leve ao passar o mouse */
+}
+
+/* Adiciona um ícone de "editar" discreto sobre a foto ao passar o mouse */
+.foto-perfil:hover::after {
+    content: "📷";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+/* Efeito quando o exercício é marcado como feito */
+.card-treino.feito {
+    opacity: 0.4; /* Deixa transparente */
+    filter: grayscale(0.8); /* Deixa levemente acinzentado */
+    order: 999; /* Garante que vá para o fim se usar flexbox no container */
+    transition: all 0.5s ease; /* Transição suave ao mover */
+    border-left: 4px solid #2ecc71 !important; /* Muda a borda para verde */
+}
+
+.card-treino.feito h3 {
+    text-decoration: line-through; /* Risca o nome do exercício */
+}
+
+/* Ajuste no container para suportar a reordenação visual */
+#lista-exercicios {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
