@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoaresPersonal Login</title>
+    <title>Samuel Soares - Personal Trainer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header style="text-align: center; padding: 20px 10px;">
-    <img src="https://i.ibb.co/e210d9/image-e210d9.jpg" alt="Samuel Soares Personal" style="width: 200px; max-width: 80%; height: auto;">
-</header>
+
+    <!-- Cabeçalho com a Logo Premium -->
+    <header>
+        <img src="https://i.ibb.co/e210d9/image-e210d9.jpg" alt="Samuel Soares Personal">
+    </header>
+
     <div class="login-container">
+        <!-- Alternância entre Aluno e Admin -->
         <div class="tabs">
             <button id="tab-aluno" class="tab-btn active" onclick="switchTab('usuario')">Sou Aluno</button>
             <button id="tab-admin" class="tab-btn" onclick="switchTab('admin')">Sou Administrador</button>
@@ -22,19 +26,25 @@
                 <p id="login-desc">Digite seus dados para ver seu treino.</p>
             </div>
             
+            <!-- Campos de Entrada -->
             <div class="inputs" style="display: flex; flex-direction: column; gap: 15px;">
                 <input type="email" id="email" placeholder="Seu e-mail">
                 <input type="password" id="password" placeholder="Sua senha">
             </div>
 
+            <!-- Botão de Ação -->
             <button class="btn-principal" onclick="fazerLogin()" style="margin-top: 20px;">
                 ENTRAR NO SISTEMA
             </button>
         </div>
         
-        <p style="color: #666; font-size: 0.8rem; margin-top: 20px;">Desenvolvido para sua melhor performance.</p>
+        <!-- Rodapé discreto -->
+        <p style="color: #666; font-size: 0.8rem; margin-top: 20px; text-align: center;">
+            Desenvolvido para sua melhor performance.
+        </p>
     </div>
 
+    <!-- Scripts de Integração (Supabase e Lógica local) -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js" defer></script>
 </body>
